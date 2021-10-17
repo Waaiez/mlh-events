@@ -14,13 +14,16 @@ module.exports = url => fetch(url)
 
     $('.event-wrapper').each(function () {
       events.push({
-        name: $(this).find('h3').text(),
         url: $(this).find('a').attr('href'),
+        imageWrapUrl: $(this).find($('.image-wrap')).children('img').attr('src'),
+        eventLogoUrl: $(this).find($('.event-logo')).children('img').attr('src'),
+        name: $(this).find('h3').text(),
+        eventDate: $(this).find($('.event-date')).text(),
         startDate: $(this).find('meta[itemprop = \'startDate\']').attr('content'),
         endDate: $(this).find('meta[itemprop = \'endDate\']').attr('content'),
-        location: $(this).find('p').last().text().replace(/\s/g, ''),
-        isHighSchool: $(this).find($('.ribbon-wrapper')).length !== 0,
-        imageUrl: $(this).find($('.image-wrap')).children('img').attr('src')
+        eventLocation: $(this).find($('.event-location')).text().replace(/(\r\n|\n|\r|\s)/gm, ""),
+        eventHybridNotes: $(this).find($('.event-hybrid-notes')).children('span').text(),
+
       });
     });
 

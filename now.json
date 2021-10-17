@@ -1,7 +1,5 @@
 {
-  "version": 2,
-  "name": "mlh-events",
-  "alias": "mlh-events.now.sh",
-  "routes": [{ "src": "/(.*)", "dest": "src/server.js" }],
-  "builds": [{ "src": "src/server.js", "use": "@now/node-server" }]
+	"version": 2,
+	"routes": [{ "src": "/(.*)", "dest": "src/server.js" }],
+	"builds": [{ "src": "src/server.js", "use": "@now/node" }]
 }
