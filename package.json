@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "test": "xo && ava",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,11 @@
     "express": "^4.15.2",
     "node-fetch": "^2.6.7",
     "url-join": "^1.1.0",
-    "xo": "^0.42.0"
+    "xo": "^0.42.0",
+    "@snyk/protect": "latest"
   },
   "xo": {
     "space": true
-  }
+  },
+  "snyk": true
 }
